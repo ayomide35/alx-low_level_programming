@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - print single digit numbers
+ * main - print double digit combos
  *
- * Description: print single digit numbers with commas
+ * Description: print double digit combos
  *
  * Return: Always 0 (Success)
  */
@@ -17,13 +17,13 @@ int main(void)
 
 	while(i < 58)
 	{
-		j = 48;
+		j = i + 1;
 		while (j < 58)
 	{
 		putchar(i);
 		putchar(j);
 
-		if (i < 57 || j < 57)
+		if (i < 56 || j < 57)
 		{
 			putchar(44);
 			putchar(32);
@@ -32,6 +32,8 @@ int main(void)
 	}
 
 		i++;
-
-		putchar(10);
 	}
+	putchar(10);
+
+	return (0);
+}
