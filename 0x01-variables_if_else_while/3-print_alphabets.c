@@ -3,7 +3,7 @@
 /**
  * main - print the letters of a alphabet
  *
- * Description: Write a program that prints the alphabet in lowercase, and then in uppercase.
+ * Description: a program that prints the alphabet in lowercase and uppercase
  *
  * Return: Always 0 (Success)
  */
@@ -11,7 +11,6 @@
 int main(void)
 {
 	int i, j;
-
 
 	i = 97;
 	j = 65;
