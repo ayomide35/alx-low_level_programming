@@ -15,7 +15,7 @@ int main(void)
 	i = 48;
 	j = 48;
 
-	while(i < 58)
+	while (i < 58)
 	{
 		j = i + 1;
 		while (j < 58)
