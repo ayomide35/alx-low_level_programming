@@ -5,7 +5,7 @@
 /**
  * main - determine if the number is positive or negative
  *
- * Description: assign a random number to the variable n each time it is executed
+ * Description: assign a random number to the variable n
  *
  * Return: Always 0 (Success)
  */
