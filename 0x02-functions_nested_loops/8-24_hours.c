@@ -3,7 +3,7 @@
 /**
  * jack_bauer - prints time in hour, minutes and second
  *
- * Return: 24 hour clock line by line 
+ * Return: 24 hour clock line by line
  */
 
 void jack_bauer(void)
