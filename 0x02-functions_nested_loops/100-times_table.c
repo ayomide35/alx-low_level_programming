@@ -28,8 +28,7 @@ void print_times_table(int n)
 					_putchar(' ');
 				if (d <= 9)
 					_putchar(' ');
-
-				if (d >= 100)
+				if (d>= 100)
 				{
 					_putchar((d / 100) + '0');
 					_putchar(((d / 10)) % 10 + '0');
