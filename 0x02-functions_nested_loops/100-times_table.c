@@ -11,34 +11,42 @@
 
 void print_times_table(int n)
 {
-	int row, column, d;
+	int row, column, product;
 
-	if (n >= 0 && n <= 15)
+	if (n >= 0 && n < 15)
 	{
 		for (row = 0; row <= n; row++)
 		{
-			_putchar ('0');
-
-			for (column = 1; column <= n; column++)
+			for (column = 0; column <= n; column++)
 			{
-				_putchar(',');
-				_putchar(' ');
-				d = row * column;
+				product = row * column;
 
-				if (d <= 99)
-					_putchar(' ');
-				if (d <= 9)
-					_putchar(' ');
-				if (d >= 100)
+				if (column == 0)
+					_putchar('0');
+				else if (product < 10)
 				{
-					_putchar((d / 100) + '0');
-					_putchar(((d / 10)) % 10 + '0');
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(product % 10 + '0');
 				}
-				else if (d <= 99 && d >= 10)
+				else if (product >= 10 && product < 100)
 				{
-					_putchar((d / 10) + '0');
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar((product / 10) % 10 + '0');
+					_putchar(product % 10 + '0');
 				}
-				_putchar((d % 10) + '0');
+				else if (product > 99 && product < 1000)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(product / 100 + '0');
+					_putchar((product / 10) % 10 + '0');
+					_putchar(product % 10 + '0');
+				}
 			}
 			_putchar('\n');
 		}
