@@ -4,25 +4,27 @@
  * print_diagonal - draws diagonal line
  * @n: number of times
  * 
- * Return: void
+ * Return: Always 0
  */
 
 void print_diagonal(int n)
 {
-	int line = 0;
-	int spaces;
+	int x, y;
 
 	if (n > 0)
 	{
-		while (line < n)
+		for (x = 1; x <= n; x++)
 		{
-			for (spaces = 0; spaces < line; spaces++)
+			for (y = 1; y <= n; y++)
 			{
+				if (x == y)
+				{
+					_putchar(92);
+					break;
+				}
 				_putchar(' ');
 			}
-			_putchar('\\');
 			_putchar('\n');
-			line++;
 		}
 	}
 	else
