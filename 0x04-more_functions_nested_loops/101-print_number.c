@@ -1,68 +1,47 @@
-#include <math.h>
 #include "main.h"
 
 /**
- * power - exponents
- * @base: base
- * @exp: exponent
- * Return: result (int)
- */
-
-int  power(int base, int exp)
-{
-	int i, num;
-
-	num = 1;
-	for (i = 0; i < exp; ++i)
-		num *= base;
-
-	return (num);
-}
-
-/**
- * print_number - prints an integer
- * @n: number to print
- * Return void
+ * print_number -  checks for an integer
+ * @n: n -  Variable
+ * Return: Always 0
  */
 
 void print_number(int n)
 {
-	int negative = 0;
-	int digit;
-	int divisor;
-	int begin = 0;
-	int place = 10;
+	unsigned int c;
+	int a, b;
 
-	if (n < 0)
+	b = 10;
+
+	if (n < 10 && n >= 0)
 	{
-		negative = 1;
-		n = n * -1;
+		_putchar (n + '0');
 	}
-	while (place >= 0)
+	else if (n > -10 && n < 0)
 	{
-		/*divisor = pow(10, place);*/
-		divisor = power(10, place);
-		digit = ((n / divisor) % 10);
-		if (digit == 0 && begin == 0)
-		{
-			place--;
-		}
-		else if (digit != 0 && begin == 0)
-		{
-			begin = 1;
-			if (negative == 1)
-				_putchar('-');
-			_putchar('0' + digit);
-			place--;
-		}
-		else
-		{
-			_putchar('0' + digit);
-			place--;
-		}
+		n = n - 2 * n;
+		_putchar('-');
+		_putchar (n + '0');
 	}
-	if (digit == 0 && divisor == 1)
+
+	else
 	{
-		_putchar(48);
+		if (n < 0)
+		{
+			n = n * -1;
+			_putchar ('-');
+		}
+		c = n;
+		while (c / b > 9)
+		{
+			b = b * 10;
+		}
+		while (b > 0)
+		{
+			a = c / b;
+			c = c % b;
+			_putchar (a + '0');
+			b = b / 10;
+		}
 	}
 }
