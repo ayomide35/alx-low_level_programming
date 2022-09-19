@@ -19,7 +19,7 @@ int main(void)
 		i = k = s = 0;
 		while ((2772 - 122) > s)
 		{
-			b = rand() % 62;
+			j = rand() % 62;
 			p[i] = c[j];
 			s += c[j];
 			i++;
