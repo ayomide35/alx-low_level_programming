@@ -8,7 +8,7 @@
  * Return: always 0
  */
 
-int main(void)
+void randomPasswordGeneration(int N)
 {
 	int i = 0;
 	int randomizer = 0;
