@@ -6,21 +6,31 @@
  * Return: void
  */
 
-void puts_half(char *str)
+void puts_half(char *s)
 {
-	int i, j, k;
-	
-	i = 0;
+	int i = 0, n;
+
 	while (str[i] != '\0')
 	{
 		i++;
 	}
-	k = i;
-	j = k / 2;
-	while (j <= k)
+	if (i % 2 == 1)
 	{
-		_putchar(str[j]);
-		j++;
+		n = (i + 1) / 2;
+		while (str[n] != '\0')
+		{
+			_putchar(str[n]);
+			n++;
+		}
+	}
+	else
+	{
+		n = (i / 2);
+		while (str[n] != '\0')
+		{
+			_putchar(str[n]);
+			n++;
+		}
 	}
 	_putchar('\n');
 }
