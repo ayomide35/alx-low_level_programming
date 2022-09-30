@@ -1,7 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
-#include <ctype,h>
 
 /**
  * main - prints minimum number of coins to make change
@@ -11,42 +9,31 @@
  * Return: (0)
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv)
 {
-	int j = 0, i = 1, coins, change = 0, a;
-	int cents[5] = {25, 10, 5, 2, 1};
+	int total, change;
 
-	if (argc == 2)
-	{
-		for (j = 0; argv[i][j] != '\0'; j++)
-		{
-			if (argv[i][j] == '-')
-			{
-				printf("0\n");
-				return (0);
-			}
-			if (!(isdigit(argv[i][j])))
-			{
-				printf("Error\n");
-				return (1);
-			}
-		}
-		coins = atoi(argv[i]);
-		for (a = 0; a < 5; a++)
-		{
-
-			while (coins >= cents[a])
-			{
-				coins -= cents[a];
-				change += 1;
-			}
-		}
-		printf("%d\n", change);
-	}
-	else
+	if (argc < 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+
+	change = atoi(argv[1]);
+
+	for (total = 0; change > 0; total++)
+	{
+		if (change - 25 >= 0)
+			change = change - 25;
+		else if (change - 10 >= 0)
+			change = change - 10;
+		else if (change - 5 >= 0)
+			change = change - 5;
+		else if (change - 2 >= 0)
+			change = change - 2;
+		else if (change - 1 >= 0)
+			change = change - 1;
+	}
+	printf("%d\n", total);
 	return (0);
 }
