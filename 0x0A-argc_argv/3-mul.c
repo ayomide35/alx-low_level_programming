@@ -5,19 +5,23 @@
 /**
  * main - print product of two numbers
  * @argc: number of arguments
+ * @argv: An array containing the program command line arguments
+ *
  * Return: 0
  */
 
 int main(int argc, char *argv[])
 {
-	if (argc <= 2 || argc > 3)
+	int mul = 1;
+
+	if (argc == 3)
 	{
-		printf("Error\n");
-		return (1);
+		mul *= atoi(argv[argc - 2]);
+		mul *= atoi(argv[argc - 1]);
+		printf("%d\n", mul);
 	}
 	else
-	{
-		printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
-		return (0);
-	}
+		printf("Error\n");
+	return (0);
+
 }
